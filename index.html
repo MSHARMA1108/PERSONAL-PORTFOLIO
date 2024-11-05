@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal porfolio</title>
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        *
+        {
+            margin:0;
+            padding:0;
+            font-family: 'poppins',sans-serif;
+            box-sizing: border-box;
+            
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            background:#080808;
+            color:#fff;
+
+        }
+        #header
+        {
+            width:100%;
+            height:100vh;
+            background-image: url(images/MY\ backgrung\ img.png);
+            background-size:cover;
+            background-position: center;
+               
+        }
+
+    
+
+      
+
+        #logo{
+            height:60px;
+            width:140px;
+            border-radius: 10%;
+
+        }
+
+        .container
+        {
+             padding:10px 10%;
+        }
+
+        nav{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        nav ul li{
+            display:inline-block;
+            list-style: none;
+            margin:10px 20px;
+
+        }
+
+        nav ul li a{
+            color:#fff;
+            text-decoration: none;
+            font-size: 18px;
+            position:relative;
+
+        }
+        nav ul li a::after{
+           content: '';
+           width:0;
+           height:3px;
+           background: #ff004f;
+           position:absolute;
+           left:0;
+           bottom:-6px;
+           transition: 0.5s;
+
+
+        }
+        nav ul li a:hover::after{
+            width:100%;
+        }
+
+        .header-text
+        {
+          margin-top:20%;
+          font-size: 30px;
+          
+        }
+        .header-text h1{
+            font-size: 60px;
+            margin-top: 20px;
+        }
+        .header-text h1 span{
+            color:#ff004f;
+        }
+        
+#about
+{
+    padding:80px 0;
+    color: #ababab;
+
+
+}
+.row
+{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1
+{
+    flex-basis:35%;
+
+}
+.about-col-1 img{
+    width:100%;
+    border-radius: 15px;
+
+}
+.about-col-2
+{
+    flex-basis: 60%;
+}
+.subtitle
+{
+    font-size:60px;
+    font-weight:600;
+    color:white;
+}
+
+.class-titles
+{
+    display:flex;
+    margin:20px 0 40px;
+
+}
+.tab-links
+{
+    margin-right:50px;
+     font-size:18px;
+     font-weight: 500;
+     cursor:pointer;
+     position:relative;
+}
+.tab-links::after{
+ content:'';
+ width:0;
+ height:3px;
+ background: #ff004f;
+ position:absolute;
+ left:0;
+ bottom:-8px;
+ transition:1s;
+
+
+}
+
+.tab-links.active-link::after
+{
+    width:70%;
+}
+.tab-contents ul li{
+     list-style: none;
+     margin: 10px 0;
+
+}
+.tab-contents ul li span{
+    color:#b54769;
+    font-size: 14px;
+}
+.tab-contents
+{
+  display:none;
+
+}
+
+.tab-contents.active-content
+{
+    display: block;
+}
+
+
+
+
+#services
+{
+     padding: 30px 0;
+      
+}
+.services-list
+{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+     grid-gap:40px;
+     margin-top:50px;
+
+}
+
+#webdev
+{
+    position:relative;
+
+}
+#webdev:hover{
+    box-shadow: #FBD288 0px 20px 30px -10px;
+    transition: 0.7s;
+
+}
+
+#design:hover{
+    box-shadow: #FBD288 0px 20px 30px -10px;
+    transition: 0.7s;
+}
+#problem:hover
+{
+   
+    box-shadow:#FBD288 0px 20px 30px -10px;
+    transition: 0.7s;
+}
+
+.services-list div{
+    background: #262626; 
+    padding:40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.8s, transform 1s;
+
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom:30px ;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover
+{
+    background: #ff004f;
+      transform: translateY(-10px);
+    
+}
+
+.class-titles p{
+    font-size: 30px;
+    font-weight: 300;
+    color:#fff;
+
+}
+.tab-contents li{
+    font-size: 20px;
+     font-size:300;
+     padding:10px;
+}
+.tab-contents li span{
+    font-size:25px;
+ margin-bottom: 5px;
+}
+
+#portfolio
+
+{
+    padding:50px 0;
+    
+}
+.work-list
+{
+    
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+     grid-gap:40px;
+     margin-top:50px;
+}
+.work
+{
+    border-radius:10px ;
+    position:relative;
+    overflow: hidden;
+}
+.work img{
+    width:100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+
+.work:hover img{
+ transform:scale(1.1) ;
+}
+.layer
+{
+    width:100%;
+    height:0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    padding:0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+    
+}
+.layer a{
+   margin-top: 20px;
+   color:#ff004f;
+   text-decoration: none;
+   font-size: 18px;
+   line-height: 60px;
+   background: #fff;
+   width:60px;
+   height:60px;
+   border-radius:50% ;
+   text-align: center;
+
+}
+.work:hover .layer{
+    height:100%;
+}
+
+.btn
+{
+    display: block;
+    margin:50px auto;
+    width:fit-content;
+    border:1px solid #ff004f;
+    padding:14px 50px;
+    border-radius: 6px;
+      text-decoration: none;
+      color:aliceblue;
+      transition:background o.8s;
+
+}
+.btn:hover{
+    background-color: #ff004f;
+
+}
+ 
+
+.contact-left
+{
+    flex-basis: 35%;
+
+}
+.contact-right
+{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+    
+}
+.contact-left p i{
+    color:#ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+
+
+}
+.social-icons
+{
+    margin-top: 30px;
+
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color:#ababab;
+    display: inline-block;
+
+}
+.social-icons a:hover{
+    color:#ff004f;
+    transform:translateY(-5px);
+
+}
+.btn .btn2
+{
+    display: inline-block;
+    background:#ff004f ;
+}
+
+
+.contact-right form
+{
+   width:100%;
+
+}
+form input,form textarea
+{
+    width: 100%;
+    border:0;
+    outline: none;
+    background:#262626 ;
+    padding:15px;
+    margin:15px;
+    color:#fff;
+    font-size:18px;
+    border-radius: 6px;
+
+
+}
+
+.btn3
+{
+    display: block;
+    margin:50px auto;
+    width:fit-content;
+    border:1px solid #ff004f;
+    padding:14px 50px;
+    border-radius: 6px;
+      text-decoration: none;
+      color:rgb(234, 234, 234);
+      transition:background o.8s;
+      background-color: #080808;
+
+}
+.btn3:hover{
+    background: #ff004f;
+}
+
+form .btn3{
+    padding:14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright
+{
+    width:100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+
+}
+.copyright i{
+    color: red;
+}
+
+nav .fa-solid{
+    display:none;
+
+}
+
+       /* css for small screen */
+@media only screen and (max-width:600px)
+{
+    #header
+    {
+        background-image:url(images/phone\ backgroun\ 2.jpg);
+
+    }
+    .header-text{
+        
+        margin-top: 100%;
+        font-size: 16px;
+
+
+    }
+    .header-text h1{
+        font-size: 30px;
+
+    }
+    nav .fa-solid{
+         display:block;
+         font-size: 25px;
+    } 
+
+    nav ul{
+        background: #ff004f;
+         position:fixed;
+           top:0;
+           right:0;
+         width:200px;
+           height:100vh;
+            padding-top: 50px;
+         z-index: 2;
+         transition:right 0.7s;
+
+
+    }
+    nav ul li{
+      display:block;
+      margin:35px;
+
+    }
+
+    nav ul .fa-solid{
+      position:absolute;
+      top:25px;
+      left:25px;
+      cursor: pointer;
+    
+    }
+
+    .subtitle{
+        font-size:40px;
+
+
+    }
+    .about-col-1 .about-col-2
+    {
+       flex-basis: 100%;
+    }
+    .about-col-1
+    {
+        margin-bottom:30px ;
+    }
+    .about-col-2
+    {
+        font-size: 14px;
+    }
+
+    .tab-links
+    {
+          font-size:16px;
+          margin-right: 20px;
+    }
+    .contact-left .contact-right
+    {
+        flex-basis: 100%;
+    }
+    .copyright
+    {
+        font-size: 14px;
+    }
+    
+}
+#msg
+{
+     color:#61b752;
+     margin-top: -40px;
+     display: block;
+}
+
+
+
+    </style>
+
+<script src="https://kit.fontawesome.com/8253e546d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+
+        
+        <div class="container">
+            <nav>
+                  <img id="logo" src="Screenshot 2024-10-27 153328.png" alt="">
+
+                  <ul id="sidemenu">
+                    <li><a href="#header" >Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Technical Experties</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact"> Contact</a></li>
+                    
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                  </ul>
+                  <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p> Software Developer</p>
+                <h1>Hi, I'm  <br> <span>Manoj</span> Sharma  </h1>
+            </div>
+            
+        </div>
+
+
+    </div>
+   <!-- about -->
+    <div id="about">
+        <div class="container">
+             <div class="row">
+                <div class="about-col-1"><img src="images/user.png" alt=""></div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">
+                        About Me
+                    </h1>
+                    <p>
+                    
+
+<b>
+ I am currently an undergraduate student in Computer Science and Engineering at Guru Jambheshwar University of Science and Technology, Hisar. With solid academic grounding in courses such as Data Structures, Operating Systems, and DBMS, I maintain a CGPA of 6.6. My programming expertise spans across C, C++ and JavaScript, with a strong knack for web development using HTML, CSS, and React. 
+</b>
+                    </p>
+                    <div class="class-titles">
+                        <p class="tab-links active-link " onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+
+                    </div>
+                    <div class="tab-contents active-content" id="skills">
+                        <ul>
+                            <li><span>Languages:</span><br> C/C++ (Proficient), Java, JavaScript</li>
+                            <li><span>Web Development</span><br>HTML, CSS, JavaScript, Tailwind CSS, React </li>
+                            <li><span>Database</span><br>MySql</li>
+                            <li><span>Developer Tools </span><br>VS Code</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>Landing Page of Website </span><br>Developed a responsive landing page using HTML and Tailwind CSS. </li>
+                            <li><span>To-Do App Development</span><br>Created a user-friendly To-Do application using HTML, Tailwind CSS, and JavaScript.</li>
+                           
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Guru Jambheshwar University of Science and Technology, Hisar, Haryana</span><br>B.Tech in Computer Science and Engineering (2025)
+                            </li>
+                            <li><span>12th Grade (2019-2020)</span><br> Scored 88.2%
+                            </li>
+                            <li><span>10th Grade (2017-2018)</span><br> Scored 86%</li>
+                          
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+<!-----------------services------->
+<div id="services">
+    <div class="container">
+        <h1 class="subtitle">
+            Technical Experties
+        </h1>
+        <div class="services-list">
+            <div id="webdev">
+                <i class="fa-duotone fa-solid fa-code"></i>
+               <h2>Web Development</h2> 
+               <p>
+                "I’m a web developer skilled in HTML, CSS, and JavaScript, with a basic understanding of React. I focus on building clean, responsive websites and enjoy learning new techniques to create better web experiences."</p>
+
+               <a href="#">Learn more</a>
+            </div>
+             <div id="design">
+                <i class="fa-solid fa-crop"></i>
+               <h2>My Sql</h2> 
+               <p>"I have a solid understanding of SQL, enabling me to manage and retrieve data effectively. I can write queries to organize, filter, and analyze data, supporting dynamic and data-driven web applications."</p>
+               <a href="#">Learn more</a>
+            </div>
+        
+     
+            <div id="problem">
+                <i class="fa-duotone fa-solid fa-pencil"></i>
+               <h2>Problem solving</h2> 
+               <p>"I have strong problem-solving skills with a deep understanding of data structures and algorithms, honed by solving over 150 challenges on LeetCode. This experience has sharpened my ability to approach complex problems systematically and optimize solutions efficiently."</p>
+               <a href="#">Learn more</a>
+            </div>
+            
+        </div>
+        
+           
+     
+
+
+    </div>
+</div>
+
+<div id="portfolio">
+ <div class="container">
+    <h1 class="subtitle">
+        MY Work
+    </h1>
+    <div class="work-list">
+
+        <div class="work">
+            <img src="images/To do list.jpg" alt="">
+            <div class="layer">
+                <h3>To Do APP</h3>
+                <p>
+                    The app allows users to efficiently organize their 
+                    tasks with an intuitive interface and interactive functionality.
+                     Key features include adding, editing, and deleting tasks, as well as marking them as complete.
+                </p>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+
+        </div>
+        <div class="work">
+         <img src="images/Personal Portfolio.jpg">
+            
+            <div class="layer">
+                <h3>Portfolio Website </h3>
+                <p>
+                    The site features a clean, modern design and a responsive 
+                    layout, ensuring seamless viewing across all devices. Key sections
+                     include an "About Me" introduction, a "Projects" gallery, a "Skills" overview, 
+                     and a "Contact" form to encourage user interaction.
+                </p>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+     
+
+    </div>
+    <a href="" class="btn">See More</a>
+ </div>
+</div>
+
+
+       <!-- contact -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                 <h1 class="sub-title">Contact Me</h1>
+                 <p> contact <i class="fa-solid fa-paper-plane"></i> @manojsharmagokal@gmail.com</p>
+                 <p> <i class="fa-solid fa-phone"></i>8053295425</p>
+                 <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/manoj-sharma-30316a22a/"><i class="fa-brands fa-linkedin"></i></a>
+                
+                    <a href=""></a>
+                 </div>
+                 <a href="images/resumemanoj.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+             <form action="" name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" row="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn3 ">Submit</button>
+             </form>
+             <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p><i class="fa-solid fa-heart" style="color: #8694ac;"></i>© [2024] Manoj Sharma. All Rights Reserved.
+
+        </p>
+    </div>
+</div>
+
+
+    <script>
+         var tablinks= document.getElementsByClassName("tab-links");
+         var tabcontents= document.getElementsByClassName("tab-contents");
+
+         function opentab(tabname)
+         {
+            for(tablink of tablinks)
+         {
+            tablink.classList.remove("active-link");
+
+         }
+         for(tabcontent of tabcontents)
+         {
+            tabcontent.classList.remove("active-content");
+            
+         }
+
+         event.currentTarget.classList.add("active-link");
+         document.getElementById(tabname).classList.add("active-content");
+         }
+
+         
+    </script>
+    <script>
+         var sidemenu=document.getElementById("sidemenu");
+
+         function openmenu()
+         {
+            sidemenu.style.right= "0";
+
+         }
+         function closemenu()
+         {
+            sidemenu.style.right= "-200px";
+            
+         }
+
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbye3yIZ_lICUI1VB-WFbbSrN7-hiz4UIHcybafWxzBbJCfwPLgQNYDalx4CgJ-d5tsK/exec'
+        const form = document.forms['submit-to-google-sheet']
+         const msg= document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Messsage Sent Successfully!!"
+                setTimeout(function()
+            {
+                msg.innerHTML="";
+            },5000)
+            form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
